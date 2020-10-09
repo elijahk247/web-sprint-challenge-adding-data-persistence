@@ -6,7 +6,7 @@ const Task = require('./task-model.js');
 
 // GET all tasks, /api/tasks
 router.get('/', (req, res) => {
-  Project.getAll()
+  Task.getAll()
     .then(tasks => {
       res.status(200).json(tasks);
     })
@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const data = req.body;
 
-  Tasks.add(data)
-    .then(project => {
+  Task.add(data)
+    .then(tasks => {
       res.status(201).json({ message: 'Created new tasks' });
     })
     .catch(err => {
