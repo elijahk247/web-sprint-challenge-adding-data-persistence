@@ -34,15 +34,15 @@ exports.up = function(knex) {
       .notNullable()
       .references('id')
       .inTable('project')
-      .onUpdate('CASADE')
+      .onUpdate('CASCADE')
 
     tbl.integer('resource_id')
       .unsigned()
       .notNullable()
       .references('id')
       .inTable('resource')
+      .onUpdate('CASCADE')
   })
-  
 };
 
 exports.down = function(knex) {
